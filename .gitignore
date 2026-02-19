@@ -1,0 +1,98 @@
+# ============================================================
+# TaskFlow Pro - .gitignore
+# ============================================================
+
+# ------------------------------------------------------------
+# .NET / C#
+# ------------------------------------------------------------
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.swp
+*.sln.docstates
+TestResults/
+*.coverage
+*.coveragexml
+*.trx
+
+# Secrets - NEVER commit these
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.pfx
+*.p12
+
+# Entity Framework migrations snapshot (keep migrations, ignore designer files)
+**/Migrations/*Designer.cs
+
+# NuGet
+*.nupkg
+.nuget/
+packages/
+project.lock.json
+
+# Publish output
+publish/
+**/publish/
+
+# ------------------------------------------------------------
+# Angular / Node
+# ------------------------------------------------------------
+node_modules/
+dist/
+.angular/
+*.js.map
+
+# Environment files - NEVER commit real secrets
+frontend/src/environments/environment.prod.ts
+frontend/src/environments/environment.staging.ts
+
+# Cache
+.cache/
+.npm/
+.eslintcache
+
+# ------------------------------------------------------------
+# Docker
+# ------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+
+# Keep example env files (no real values)
+!.env.example
+
+# ------------------------------------------------------------
+# OS
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# ------------------------------------------------------------
+# IDE
+# ------------------------------------------------------------
+.idea/
+*.iml
+.vscode/settings.json
+.vscode/launch.json
+
+# Keep shared VS Code config (extensions, recommended settings)
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# ------------------------------------------------------------
+# Logs
+# ------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+
+# ------------------------------------------------------------
+# Testing
+# ------------------------------------------------------------
+coverage/
+.nyc_output/

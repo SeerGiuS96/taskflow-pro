@@ -1,0 +1,20 @@
+# Normalize line endings to LF on commit (cross-platform consistency)
+* text=auto eol=lf
+
+# Force LF for these file types
+*.cs text eol=lf
+*.ts text eol=lf
+*.html text eol=lf
+*.scss text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+
+# Binary files - no line ending conversion
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary

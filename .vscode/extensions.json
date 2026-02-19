@@ -1,0 +1,32 @@
+{
+  "recommendations": [
+    // C# / .NET
+    "ms-dotnettools.csharp",
+    "ms-dotnettools.csdevkit",
+
+    // Angular
+    "Angular.ng-template",
+    "johnpapa.angular2",
+
+    // Mermaid diagrams in Markdown preview
+    "bierner.markdown-mermaid",
+
+    // Prettier (code formatting)
+    "esbenp.prettier-vscode",
+
+    // EditorConfig
+    "EditorConfig.EditorConfig",
+
+    // GitLens (see git blame, history)
+    "eamodio.gitlens",
+
+    // Docker
+    "ms-azuretools.vscode-docker",
+
+    // REST client (test API without Postman)
+    "humao.rest-client",
+
+    // Tailwind CSS
+    "bradlc.vscode-tailwindcss"
+  ]
+}

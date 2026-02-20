@@ -1,7 +1,7 @@
 # TaskFlow Pro
 
-> A full-stack project management platform built to demonstrate senior-level software engineering practices.
-> Inspired by tools like Linear and Jira.
+> A full-stack project management platform inspired by tools like Linear and Jira.
+> Built with Clean Architecture, CQRS, Angular and real-time collaboration.
 
 ---
 
@@ -9,7 +9,9 @@
 
 TaskFlow Pro is a **multi-tenant project management system** where organizations can manage projects, boards, and tasks with real-time collaboration.
 
-This project was built as a personal learning project to master:
+TaskFlow Pro is a **multi-tenant project management system** where organizations manage projects, boards, and tasks with real-time collaboration.
+
+Built to practice and apply:
 - Clean Architecture and CQRS in .NET
 - Angular with NgRx state management
 - Domain-Driven Design concepts

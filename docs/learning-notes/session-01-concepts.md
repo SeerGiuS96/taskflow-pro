@@ -123,6 +123,25 @@ They don't sync. The context for this project lives in `CLAUDE.md`, which Claude
 
 ---
 
+## Encapsulation — private setters in entities
+
+In `User.cs`, all properties have `private set`. This means nobody outside the class can do:
+
+```csharp
+user.Email = "hacked@evil.com"; // ❌ won't compile
+```
+
+The only way to change state is through explicit methods:
+
+```csharp
+user.SetRefreshToken(hash, expiresAt); // ✅ controlled change
+user.RevokeRefreshToken();             // ✅ controlled change
+```
+
+**Why it matters:** the object controls its own data. This is called **encapsulation** — one of the four pillars of OOP. In domain entities it also means business rules live inside the entity, not scattered across the codebase.
+
+---
+
 ## My questions to review before next session
 
 - [ ] Can I explain what CQRS is in one sentence without looking at notes?

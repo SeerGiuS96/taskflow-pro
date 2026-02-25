@@ -29,20 +29,32 @@ Full documentation in `docs/`. Start with `docs/architecture/overview.md`.
 
 ## Current Phase
 
-**Phase 1 — Backend Skeleton + Auth (IN PROGRESS)**
+**Phase 1 — Backend Skeleton + Auth (ALMOST DONE — blocked on Docker)**
 
-Done so far:
-- .NET solution created with 4 projects (Domain, Application, Infrastructure, API)
-- Project references set following Clean Architecture dependency rule
-- `BaseEntity` created (Id UUID, CreatedAt, UpdatedAt)
-- `User` entity created with encapsulation (private setters, factory method, refresh token methods)
+Done:
+- .NET solution with 4 projects, Clean Architecture dependency rule
+- `BaseEntity`, `User` entity with encapsulation
+- NuGet packages: EF Core 9, Npgsql, MediatR 12, FluentValidation, JWT Bearer, BCrypt, Swagger
+- `ApplicationDbContext` + `UserConfiguration` (Fluent API)
+- `IApplicationDbContext`, `IPasswordHasher` interfaces (Application layer)
+- `PasswordHasher` implementation with BCrypt (Infrastructure layer)
+- `Result<T>` and `Error` pattern (Domain layer)
+- `RegisterCommand` + `RegisterCommandHandler` + `RegisterCommandValidator` (full CQRS)
+- `AuthErrors` with typed error constants
+- `DependencyInjection.cs` in both Application and Infrastructure
+- `Program.cs` wired up cleanly
+- `AuthController` with `POST /api/auth/register`
 
-**Next steps:**
-1. Install NuGet packages (EF Core, Npgsql, MediatR, FluentValidation, JWT)
-2. Create `ApplicationDbContext` in Infrastructure
-3. Create `User` EF Core configuration (Fluent API)
-4. First migration
-5. `POST /auth/register` endpoint
+**Blocked on:**
+- Docker Desktop not installed → can't run PostgreSQL → can't create first migration
+
+**Next session — unblock with Docker:**
+1. Install Docker Desktop
+2. Create `docker-compose.yml` with PostgreSQL service
+3. Run `dotnet ef migrations add InitialCreate`
+4. Run `dotnet ef database update`
+5. Test `POST /api/auth/register` in Swagger UI
+6. Implement `POST /api/auth/login` (returns JWT)
 
 See `docs/ROADMAP.md` for full phase checklist.
 

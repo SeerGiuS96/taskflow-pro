@@ -1,32 +1,79 @@
 # Learning Notes
 
-These notes are written **by me, in my own words**, as I build the project.
-Writing concepts in your own words is the most effective way to retain them.
+Personal reference notes built while developing TaskFlow Pro.
+Each note covers one concept — with diagrams, code from this project, and interview Q&A.
 
-## How to use these notes
+## How to use
 
-- Each file covers one concept
-- Written while implementing that concept — not copied from docs
-- Includes examples from this codebase, not generic tutorials
-- Review them before interviews
-
-## Index
-
-| File | Concept | Phase |
-|---|---|---|
-| [clean-architecture.md](clean-architecture.md) | What Clean Architecture really means | Phase 1 |
-| [cqrs-mediatr.md](cqrs-mediatr.md) | CQRS and MediatR in practice | Phase 2 |
-| [ef-core.md](ef-core.md) | Entity Framework Core — migrations, relationships, queries | Phase 1 |
-| [jwt-auth.md](jwt-auth.md) | JWT authentication — how it really works | Phase 1 |
-| [multi-tenancy.md](multi-tenancy.md) | Multi-tenancy with EF Core global query filters | Phase 3 |
-| [domain-events.md](domain-events.md) | Domain Events — decoupling side effects | Phase 6 |
-| [ngrx.md](ngrx.md) | NgRx — Store, Effects, Selectors explained | Phase 4 |
-| [optimistic-updates.md](optimistic-updates.md) | Optimistic updates and rollback in NgRx | Phase 5 |
-| [signalr.md](signalr.md) | SignalR real-time communication | Phase 6 |
-| [docker.md](docker.md) | Docker and Docker Compose — what and why | Phase 8 |
-| [github-actions.md](github-actions.md) | CI/CD with GitHub Actions | Phase 8 |
-| [testing.md](testing.md) | Testing strategy — unit vs integration | Phase 7 |
+- Read a note **before** implementing the concept — get the mental model first
+- Read it again **after** implementing — fill in the "My Notes" section with your own words
+- Review all notes before job interviews
 
 ---
 
-> Fill these in as you build. A blank template is waiting in each file.
+## Index by Phase
+
+### Phase 1 — Backend Foundation
+
+| File | Concept | Status |
+|---|---|---|
+| [clean-architecture.md](clean-architecture.md) | The 4 layers, dependency rule, why it matters | ✅ Written |
+| [ef-core.md](ef-core.md) | ORM, DbContext, Fluent API, migrations, Change Tracker | ✅ Written |
+| [jwt-auth.md](jwt-auth.md) | JWT tokens, refresh rotation, storage strategy | ⏳ Fill after implementing auth |
+
+### Phase 2 — CQRS Core
+
+| File | Concept | Status |
+|---|---|---|
+| [cqrs-mediatr.md](cqrs-mediatr.md) | Commands vs Queries, MediatR, Pipeline Behaviors | ⏳ Fill after implementing first handler |
+| [result-pattern.md](result-pattern.md) | Result\<T\> — returning errors without exceptions | ✅ Written |
+
+### Phase 3 — Multi-Tenancy
+
+| File | Concept | Status |
+|---|---|---|
+| [multi-tenancy.md](multi-tenancy.md) | Global query filters, tenant isolation | ⏳ Fill in Phase 3 |
+
+### Phase 4-5 — Frontend
+
+| File | Concept | Status |
+|---|---|---|
+| [ngrx.md](ngrx.md) | Store, Actions, Reducers, Effects, Selectors | ⏳ Fill in Phase 4 |
+| [optimistic-updates.md](optimistic-updates.md) | Optimistic UI + rollback pattern | ⏳ Fill in Phase 5 |
+
+### Phase 6 — Events & Real-time
+
+| File | Concept | Status |
+|---|---|---|
+| [domain-events.md](domain-events.md) | Domain events, decoupled side effects | ⏳ Fill in Phase 6 |
+| [signalr.md](signalr.md) | Real-time with SignalR, hub, Angular client | ⏳ Fill in Phase 6 |
+
+### Phase 7-8 — Quality & DevOps
+
+| File | Concept | Status |
+|---|---|---|
+| [testing.md](testing.md) | Unit tests, integration tests, Testcontainers | ⏳ Fill in Phase 7 |
+| [docker.md](docker.md) | Docker, Docker Compose, multi-stage builds | ⏳ Fill in Phase 8 |
+| [github-actions.md](github-actions.md) | CI/CD pipelines, automated testing on PR | ⏳ Fill in Phase 8 |
+
+---
+
+## Session Notes (chronological)
+
+| File | Session | Topics covered |
+|---|---|---|
+| [session-01-concepts.md](session-01-concepts.md) | Session 01 | CQRS, MediatR, multi-tenancy, encapsulation, Clean Architecture intro |
+
+---
+
+## Note Structure
+
+Every note follows this pattern:
+
+1. **The problem it solves** — why does this exist?
+2. **The concept explained simply** — no jargon first
+3. **How it works in this project** — concrete code examples
+4. **How it works in general** — applicable to any project
+5. **Diagrams** — visual representation (Mermaid)
+6. **Interview Q&A** — ready-made answers
+7. **My Notes** — YOUR section, in your own words

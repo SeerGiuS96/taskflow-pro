@@ -29,13 +29,22 @@ Full documentation in `docs/`. Start with `docs/architecture/overview.md`.
 
 ## Current Phase
 
-**Phase 0 — COMPLETED**
-- Project structure created
-- Full documentation written (architecture, ERD, ADRs, learning notes templates, roadmap)
-- Git initialized, initial commit made
+**Phase 1 — Backend Skeleton + Auth (IN PROGRESS)**
 
-**Next: Phase 1 — Backend Skeleton + Auth**
-See `docs/ROADMAP.md` for full phase details and checklist.
+Done so far:
+- .NET solution created with 4 projects (Domain, Application, Infrastructure, API)
+- Project references set following Clean Architecture dependency rule
+- `BaseEntity` created (Id UUID, CreatedAt, UpdatedAt)
+- `User` entity created with encapsulation (private setters, factory method, refresh token methods)
+
+**Next steps:**
+1. Install NuGet packages (EF Core, Npgsql, MediatR, FluentValidation, JWT)
+2. Create `ApplicationDbContext` in Infrastructure
+3. Create `User` EF Core configuration (Fluent API)
+4. First migration
+5. `POST /auth/register` endpoint
+
+See `docs/ROADMAP.md` for full phase checklist.
 
 ---
 
